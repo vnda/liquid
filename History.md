@@ -29,7 +29,7 @@ Security fix, cherry-picked from master (4e14a65):
 * Bugfix for #150: 'for' parsing bug [Peter Schröder, phoet]
 * Bugfix for #126: Strip CRLF in strip_newline [Peter Schröder, phoet]
 * Bugfix for #174, "can't convert Fixnum into String" for "replace" [wǒ_is神仙, jsw0528]
-* Allow a Liquid::Drop to be passed into Template#render [Daniel Huckstep, darkhelmet]
+* Allow a Liquid2::Drop to be passed into Template#render [Daniel Huckstep, darkhelmet]
 * Resource limits [Florian Weingarten, fw42]
 * Add reverse filter [Jay Strybis, unreal]
 * Add utf-8 support
@@ -117,15 +117,15 @@ Yanked from rubygems, as it contained too many changes that broke compatibility.
 * Fixed bad error reporting when a filter called a method which doesn't exist. Liquid told you that it couldn't find the filter which was obviously misleading [Tobias Luetke]
 * Removed count helper from standard lib. use size [Tobias Luetke]
 * Fixed bug with string filter parameters failing to tolerate commas in strings. [Paul Hammond]
-* Improved filter parameters. Filter parameters are now context sensitive; Types are resolved according to the rules of the context. Multiple parameters are now separated by the Liquid::ArgumentSeparator: , by default [Paul Hammond]
+* Improved filter parameters. Filter parameters are now context sensitive; Types are resolved according to the rules of the context. Multiple parameters are now separated by the Liquid2::ArgumentSeparator: , by default [Paul Hammond]
     {{ 'Typo' | link_to: 'http://typo.leetsoft.com', 'Typo - a modern weblog engine' }}
-* Added Liquid::Drop. A base class which you can use for exporting proxy objects to liquid which can acquire more data when used in liquid. [Tobias Luetke]
+* Added Liquid2::Drop. A base class which you can use for exporting proxy objects to liquid which can acquire more data when used in liquid. [Tobias Luetke]
 
-  class ProductDrop < Liquid::Drop
+  class ProductDrop < Liquid2::Drop
     def top_sales
        Shop.current.products.find(:all, :order => 'sales', :limit => 10 )
     end
   end
-  t = Liquid::Template.parse( ' {% for product in product.top_sales %} {{ product.name }} {% endfor %} '  )
+  t = Liquid2::Template.parse( ' {% for product in product.top_sales %} {{ product.name }} {% endfor %} '  )
   t.render('product' => ProductDrop.new )
 * Added filter parameters support. Example: {{ date | format_date: "%Y" }} [Paul Hammond]

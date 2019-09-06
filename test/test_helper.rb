@@ -7,13 +7,13 @@ begin
 rescue LoadError
   puts "Couldn't load ruby-debug. gem install ruby-debug if you need it."
 end
-require File.join(File.dirname(__FILE__), '..', 'lib', 'liquid')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'liquid2')
 
 
 module Test
   module Unit
     module Assertions
-      include Liquid
+      include Liquid2
 
       def assert_template_result(expected, template, assigns = {}, message = nil)
         assert_equal expected, Template.parse(template).render(assigns)

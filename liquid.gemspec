@@ -2,11 +2,11 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require "liquid/version"
+require 'liquid2/version'
 
 Gem::Specification.new do |s|
-  s.name        = "liquid"
-  s.version     = Liquid::VERSION
+  s.name        = "liquid2"
+  s.version     = Liquid2::VERSION
   s.platform    = Gem::Platform::RUBY
   s.summary     = "A secure, non-evaling end user template engine with aesthetic markup."
   s.authors     = ["Tobias Luetke"]

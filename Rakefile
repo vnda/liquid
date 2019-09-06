@@ -1,13 +1,13 @@
 require 'rake'
 require 'rake/testtask'
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require "liquid/version"
+require 'liquid2/version'
 
 task :default => 'test'
 
 Rake::TestTask.new(:test) do |t|
   t.libs << '.' << 'lib' << 'test'
-  t.test_files = FileList['test/liquid/**/*_test.rb']
+  t.test_files = FileList['test/liquid2/**/*_test.rb']
   t.verbose = false
 end
 
@@ -17,14 +17,14 @@ task :build do
 end
 
 task :install => :build do
-  system "gem install liquid-#{Liquid::VERSION}.gem"
+  system "gem install liquid-#{Liquid2::VERSION}.gem"
 end
 
 task :release => :build do
-  system "git tag -a v#{Liquid::VERSION} -m 'Tagging #{Liquid::VERSION}'"
+  system "git tag -a v#{Liquid2::VERSION} -m 'Tagging #{Liquid2::VERSION}'"
   system "git push --tags"
-  system "gem push liquid-#{Liquid::VERSION}.gem"
-  system "rm liquid-#{Liquid::VERSION}.gem"
+  system "gem push liquid-#{Liquid2::VERSION}.gem"
+  system "rm liquid-#{Liquid2::VERSION}.gem"
 end
 
 namespace :benchmark do
