@@ -1,0 +1,58 @@
+GIT
+  remote: https://github.com/Shopify/liquid-c.git
+  revision: 8c5ad175b7db288b9132b24c470f260c027e7a2e
+  ref: master
+  specs:
+    liquid-c (4.0.0)
+      liquid (>= 3.0.0)
+
+PATH
+  remote: .
+  specs:
+    liquid (4.0.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.0)
+    benchmark-ips (2.7.2)
+    jaro_winkler (1.5.3)
+    memory_profiler (0.9.14)
+    minitest (5.11.3)
+    parallel (1.17.0)
+    parser (2.6.4.0)
+      ast (~> 2.4.0)
+    rainbow (3.0.0)
+    rake (11.3.0)
+    rubocop (0.74.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.4.1)
+      rubocop (>= 0.71.0)
+    ruby-progressbar (1.10.1)
+    stackprof (0.2.12)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
+    unicode-display_width (1.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  benchmark-ips
+  liquid!
+  liquid-c!
+  memory_profiler
+  minitest
+  rake (~> 11.3)
+  rubocop (~> 0.74.0)
+  rubocop-performance
+  stackprof
+  terminal-table
+
+BUNDLED WITH
+   1.17.2
